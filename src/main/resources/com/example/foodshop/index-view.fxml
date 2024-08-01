@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="indexViewContent" alignment="CENTER" prefHeight="1025.0" prefWidth="750.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.foodshop.Controllers.IndexController" stylesheets="@styles.css">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+
+    <Label styleClass="label" style="-fx-font-size: 20px;" text="Search Recipes" />
+
+    <HBox alignment="CENTER" spacing="10">
+        <Label styleClass="label" text="Query:" />
+        <TextField fx:id="queryField" styleClass="text-field" promptText="Enter search query" />
+    </HBox>
+
+    <HBox alignment="CENTER" spacing="10">
+        <HBox alignment="CENTER" spacing="10">
+            <Label styleClass="label" text="Cuisine:" />
+            <TextField fx:id="cuisineField" styleClass="text-field" promptText="Enter cuisine" />
+        </HBox>
+
+        <HBox alignment="CENTER" spacing="10">
+            <Label styleClass="label" text="Diet:" />
+            <TextField fx:id="dietField" styleClass="text-field" promptText="Enter diet" />
+        </HBox>
+    </HBox>
+
+    <HBox alignment="CENTER" spacing="10">
+        <HBox alignment="CENTER" spacing="10">
+            <Label styleClass="label" text="Ingredients:" />
+            <TextField fx:id="ingredientsField" styleClass="text-field" promptText="Comma-separated ingredients" />
+        </HBox>
+
+        <HBox alignment="CENTER" spacing="10">
+            <Label styleClass="label" text="Exclude Ingredients:" />
+            <TextField fx:id="excludeIngredientsField" styleClass="text-field" promptText="Comma-separated ingredients" />
+        </HBox>
+    </HBox>
+
+    <HBox alignment="CENTER" spacing="10">
+        <HBox alignment="CENTER" spacing="10">
+            <Label styleClass="label" text="Max Calories:" />
+            <TextField fx:id="maxCaloriesField" styleClass="text-field" promptText="Enter max calories" />
+        </HBox>
+
+        <HBox alignment="CENTER" spacing="10">
+            <Label styleClass="label" text="Max Fat:" />
+            <TextField fx:id="maxFatField" styleClass="text-field" promptText="Enter max fat (g)" />
+        </HBox>
+    </HBox>
+
+    <HBox alignment="CENTER" spacing="10">
+        <HBox alignment="CENTER" spacing="10">
+            <Label styleClass="label" text="Max Protein:" />
+            <TextField fx:id="maxProteinField" styleClass="text-field" promptText="Enter max protein (g)" />
+        </HBox>
+
+        <HBox alignment="CENTER" spacing="10">
+            <Label styleClass="label" text="Max Carbs:" />
+            <TextField fx:id="maxCarbsField" styleClass="text-field" promptText="Enter max carbs (g)" />
+        </HBox>
+
+        <HBox alignment="CENTER" spacing="10">
+            <Label styleClass="label" text="Max Sugar:" />
+            <TextField fx:id="maxSugarField" styleClass="text-field" promptText="Enter max sugar (g)" />
+        </HBox>
+    </HBox>
+
+    <Button onAction="#onSearchButtonClick" styleClass="button" text="Search" />
+
+    <Label fx:id="errorMessage" styleClass="error-label" />
+
+    <Button onAction="#onRecipeDetailsButtonClick" styleClass="button" text="View Recipe" />
+
+
+    <TableView fx:id="recipesTable" styleClass="table-view">
+        <columns>
+            <TableColumn fx:id="idColumn" styleClass="table-column" prefWidth="70" text="ID" />
+            <TableColumn fx:id="titleColumn" styleClass="table-column" prefWidth="600" text="Title" />
+        </columns>
+    </TableView>
+</VBox>
